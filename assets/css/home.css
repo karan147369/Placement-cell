@@ -1,0 +1,46 @@
+body {
+  margin: 0;
+}
+#container {
+  background-color: aliceblue;
+  margin: auto;
+  position: relative;
+  height: 550px;
+}
+#formContainer {
+  height: 500px;
+  /* border: 1px solid red; */
+}
+#loginForm {
+  margin: auto;
+  width: 50%;
+  height: 50%;
+  background-color: rgb(132, 173, 159);
+  position: relative;
+  top: 50px;
+  border-radius: 25px;
+  border: 1px solid green;
+}
+#loginForm input {
+  display: block;
+  width: 50%;
+  height: 30px;
+  text-align: center;
+  font-weight: bolder;
+  margin: auto;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border-color: white;
+}
+#navbar {
+  background-color: rgb(227, 231, 231);
+  height: 100px;
+}
+#navbar ul li {
+  display: inline;
+  margin: 0;
+}
+h2 {
+  /* border: 1px solid blue; */
+  margin-top: 25px;
+}
