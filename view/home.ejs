@@ -16,16 +16,22 @@
     </header>
     <div id="container">
       <div id="formContainer">
-        <form action="" method="POST" id="loginForm">
+        <form action="/login" method="POST" id="loginForm">
           <h2 style="text-align: center">Login</h2>
-          <input type="text" name="" id="email" placeholder="Enter you Email" />
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Enter your Email"
+          />
           <input
             type="password"
-            name=""
+            name="password"
             id="password"
             placeholder="Enter your Password"
           />
           <input type="submit" value="Submit" />
+          <p><a href="/register">Need and account?</a></p>
         </form>
       </div>
     </div>

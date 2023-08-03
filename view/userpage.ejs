@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/userPage.css" />
+  </head>
+  <body>
+    <header>
+      Hi <%= name%>
+      <form action="/logout?_method=DELETE" method="POST">
+        <input type="submit" value="Logout" />
+      </form>
+      <form action="/get-csv" method="GET">
+        <input type="submit" value="Get CSV data" />
+      </form>
+    </header>
+    <div id="container">
+      <table>
+        <tr>
+          <th>S.No</th>
+          <th>Name</th>
+          <th>_Id</th>
+          <th>Batch</th>
+          <th>Placed</th>
+          <th>College Name</th>
+          <th>DSA score</th>
+          <th>WEBD score</th>
+          <th>React score</th>
+        </tr>
+        <% for(var i=0; i < studentList.length; i++) { %>
+        <tr>
+          <td><%= i+1%></td>
+          <td><%= studentList[i].name %></td>
+          <td><%= studentList[i].studentId %></td>
+          <td><%= studentList[i].batch %></td>
+          <td><%= studentList[i].placed %></td>
+          <td><%= studentList[i].college %></td>
+          <td><%= studentList[i].dsa_score %></td>
+          <td><%= studentList[i].webd_score %></td>
+          <td><%= studentList[i].react_score %></td>
+          <% } %>
+        </tr>
+      </table>
+      <div id="studentForm">
+        <div id="message" style="color: red"><%=message%></div>
+        <div
+          style="
+            font-weight: 800;
+            text-decoration: underline;
+            margin-bottom: 10px;
+          "
+        >
+          Add Student
+        </div>
+        <form action="/registerstudent" method="POST">
+          <input
+            type="text"
+            name="studentId"
+            id="studentId"
+            required
+            placeholder="Enter unique Id"
+          />
+          <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Enter Student Name"
+            required
+          />
+          <input
+            type="text"
+            name="batch"
+            id="batch"
+            placeholder="Enter Batch Name"
+            required
+          />
+          <input
+            type="text"
+            name="collegeName"
+            id="collegeName"
+            placeholder="Enter college Name"
+            required
+          />
+          <input
+            type="number"
+            name="dsa_score"
+            id="dsa"
+            placeholder="Enter DSA score"
+            required
+          />
+          <input
+            type="number"
+            name="webd_score"
+            id="webd"
+            placeholder="Enter WEBD score"
+            required
+          />
+          <input
+            type="number"
+            name="react_score"
+            id="react"
+            placeholder="Enter React score"
+            required
+          />
+          <select name="placed" id="placed" required>
+            <option value="True">True</option>
+            <option value="False" selected="selected">False</option>
+          </select>
+          <input type="submit" value="Submit" />
+        </form>
+      </div>
+      <div id="deleteStudent">
+        <div
+          style="
+            font-weight: 800;
+            text-decoration: underline;
+            margin-bottom: 10px;
+          "
+        >
+          Delete Student
+        </div>
+        <form action="/deleteStudent?_method=DELETE" method="POST">
+          <input
+            type="text"
+            name="studentId"
+            id=""
+            placeholder="Enter Student Id"
+            required
+          />
+          <input type="submit" value="Delete" />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+#container {
+  background-color: aliceblue;
+  height: 600px;
+}
+#studentForm input {
+  display: block;
+  margin: 10px;
+  width: 200px;
+}
+#container table {
+  width: 80%;
+  border: 1px solid red;
+  margin: 0;
+}
+#container table tr td {
+  border: 1px dotted blue;
+  text-align: center;
+}
+
+#studentForm {
+  position: absolute;
+  top: 8%;
+  left: 80%;
+}
+#deleteStudent {
+  position: absolute;
+  top: 60%;
+  left: 80%;
+}
