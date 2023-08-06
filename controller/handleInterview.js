@@ -1,12 +1,19 @@
 const Interview = require("../model/Interview");
+const Student = require("../model/Student");
 const getList = require("../controller/getInterviewList");
 
 const handleInterview = async (req, res) => {
   var List = [];
-  //check if interview id exists
+  //check if interview id exists and studentId exists
+
   try {
     const check = await Interview.find({ interviewId: req.body.interviewId });
-
+    const studentId = await Student.find({ studentId: req.body.studentId });
+    if (studentId.length === 0)
+      res.render("interview.ejs", {
+        message: "Student Id doesn't exits",
+        interviewList: List,
+      });
     if (check.length === 0) {
       const response = await Interview.create({
         interviewId: req.body.interviewId,
