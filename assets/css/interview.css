@@ -1,0 +1,35 @@
+#container {
+  width: 98%;
+  height: 680px;
+  background-color: rgb(200, 239, 239);
+  margin: auto;
+}
+
+#createInterview {
+  width: 50%;
+  margin: auto;
+}
+#interviewList {
+  position: absolute;
+  left: 2%;
+  width: 1200px;
+}
+#createInterview form {
+  position: absolute;
+  width: 20%;
+  margin: auto;
+  top: 50px;
+  left: 75%;
+}
+input {
+  display: block;
+  width: 100%;
+  margin: 10px;
+  height: 25px;
+}
+
+#table tr td {
+  margin: 5px;
+  border: 1px dotted green;
+  text-align: center;
+}

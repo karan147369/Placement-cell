@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/interview.css" />
+  </head>
+  <body>
+    <header>
+      <form action="/" method="GET">
+        <input type="submit" value="Home" />
+      </form>
+    </header>
+    <div id="container">
+      <div id="createInterview">
+        <form action="/createInterview" method="POST">
+          <input
+            type="text"
+            name="interviewId"
+            id=""
+            placeholder="Enter Interview Id"
+            required
+          />
+          <input
+            type="text"
+            placeholder="Enter Student Id"
+            name="studentId"
+            required
+          />
+          <input
+            type="text"
+            placeholder="Enter Company Name"
+            name="companyName"
+            required
+          />
+          <input type="date" name="date" id="date" required />
+          <input type="submit" value="Submit" />
+        </form>
+        <div id="message"><%=message%></div>
+        <div id="interviewList">
+          <table id="table">
+            <tr>
+              <th>InterviewId</th>
+
+              <th>Date</th>
+              <th>Company Name</th>
+              <th>Students List</th>
+            </tr>
+            <% for(let i =0 ;i< interviewList.length; i++) {%>
+            <tr>
+              <td><%= interviewList[i].interviewId %></td>
+              <td><%=interviewList[i].date%></td>
+              <td><%= interviewList[i].companyName %></td>
+
+              <% for(let j =0 ; j< interviewList[i].students.length; j++) {%>
+              <td><%= interviewList[i].students[j].studentId %> <%}%></td>
+            </tr>
+
+            <% }%>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

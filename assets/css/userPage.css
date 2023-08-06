@@ -1,5 +1,6 @@
 #container {
   background-color: aliceblue;
+  margin-top: 5px;
   height: 600px;
 }
 #studentForm input {
@@ -26,4 +27,8 @@
   position: absolute;
   top: 60%;
   left: 80%;
+}
+header div,
+form {
+  display: inline;
 }

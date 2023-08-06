@@ -6,8 +6,10 @@ const registerStudent = require("../controller/registerStudent");
 const getStudentList = require("../controller/getStudentList");
 const handleDeleteStudent = require("../controller/handleDeleteStudent");
 const handleCsv = require("../controller/handleCsv");
+const handleInterview = require("../controller/handleInterview");
+const getInterviewList = require("../controller/getInterviewList");
 var List = [];
-
+var interviewList = [];
 const checkAuthentication = async (req, res, next) => {
   List = await getStudentList();
   if (req.isAuthenticated()) return next();
@@ -59,6 +61,15 @@ routing.get("/userPage", checkAuthentication, (req, res) =>
     message: "",
   })
 );
+routing.get("/interview", checkAuthentication, async (req, res) => {
+  interviewList = await getInterviewList();
+  console.log(interviewList);
+  return res.render("interview.ejs", {
+    interviewList: interviewList,
+    message: "",
+  });
+});
+routing.post("/createInterview", checkAuthentication, handleInterview);
 routing.delete("/logout", checkAuthentication, (req, res) => {
   req.logOut((err) => console.log(err));
   res.redirect("/login");
