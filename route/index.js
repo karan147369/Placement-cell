@@ -13,7 +13,7 @@ var interviewList = [];
 const checkAuthentication = async (req, res, next) => {
   List = await getStudentList();
   if (req.isAuthenticated()) return next();
-  return res.redirect("/");
+  return res.render("home.ejs");
 };
 const checkNotAuthenticated = async (req, res, next) => {
   List = await getStudentList();
