@@ -32,7 +32,7 @@ app.use(
     name: "PlacementCell",
     secret: process.env.sessionKey || "keyasdf",
     saveUninitialized: false,
-    resave: false,
+    resave: true,
     cookie: {
       maxAge: 1000 * 60 * 60,
     },
